@@ -1,0 +1,53 @@
+<br /><br />
+<div class="container add-form">
+  <div class="row">
+    <div
+      class="col-lg-6 col-mg-6 col-sm-6 container justify-content-center card"
+    >
+      <h1>Create New Employee</h1>
+      <div class="card-body">
+        <form method="POST" #form="ngForm" (ngSubmit)="updateEmployee(form)">
+          <div class="form-group">
+            <label> First Name</label>
+            <input
+              type="text"
+              ngModel
+              [ngModel]="employee.firstName"
+              name="firstName"
+              class="form-control"
+              placeholder="Enter student first name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label> Last Name</label>
+            <input
+              type="text"
+              ngModel
+              [ngModel]="employee.lastName"
+              name="lastName"
+              class="form-control"
+              placeholder="Enter student last name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label> Email</label>
+            <input
+              type="email"
+              name="email"
+              ngModel
+              [ngModel]="employee.email"
+              class="form-control"
+              placeholder="Enter student email"
+            />
+          </div>
+
+          <div class="box-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

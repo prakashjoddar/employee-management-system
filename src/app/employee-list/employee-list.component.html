@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <h1>Employee List</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3">
+      <a class="btn btn-primary btn-sm mb-3" routerLink="/add">Add Employee</a>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let emp of employees">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.firstName }}</td>
+        <td>{{ emp.lastName }}</td>
+        <td>{{ emp.email }}</td>
+        <td>
+          <a class="btn btn-primary" routerLink="/edit/{{ emp.id }}">Update</a>
+          <a
+            class="btn btn-danger"
+            name="{{ emp.id }}"
+            #delete
+            (click)="deleteEmployee(delete)"
+            >Delete</a
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
